@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Aktan Taksi & Nakliyat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{margin:0;font-family:Arial;background:#f4f4f4}
+header{background:#1E2A38;color:#FFD700;padding:15px;text-align:center;font-size:26px}
+.hero{background:#FFD700;padding:50px 20px;text-align:center}
+.hero h1{margin:0;font-size:36px}
+.hero p{font-size:18px}
+
+.buttons{margin-top:20px}
+.buttons a{
+display:inline-block;
+margin:10px;
+padding:15px 25px;
+background:#1E2A38;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-size:18px
+}
+
+.section{padding:40px 20px;text-align:center}
+.card{background:white;padding:20px;margin:15px auto;max-width:400px;border-radius:10px;box-shadow:0 0 10px #ccc}
+
+input,select{
+width:90%;
+padding:10px;
+margin:10px;
+font-size:16px
+}
+
+button{
+background:#FFD700;
+border:none;
+padding:15px;
+width:95%;
+font-size:18px;
+cursor:pointer
+}
+
+footer{
+background:#1E2A38;
+color:white;
+text-align:center;
+padding:20px
+}
+</style>
+</head>
+
+<body>
+
+<header>Aktan Taksi & Nakliyat</header>
+
+<div class="hero">
+<h1>7/24 Taksi & Nakliyat</h1>
+<p>Hızlı, güvenli ve uygun fiyatlı taşıma</p>
+
+<div class="buttons">
+<a href="https://wa.me/905448354481" target="_blank">🚕 WhatsApp'tan Taksi Çağır</a>
+<a href="https://wa.me/905448354481" target="_blank">📦 Nakliyat Talep Et</a>
+</div>
+</div>
+
+<div class="section">
+<h2>📍 Konumumuz</h2>
+<iframe 
+src="https://www.google.com/maps?q=istanbul&output=embed" 
+width="100%" height="250" style="border:0;"></iframe>
+</div>
+
+<div class="section">
+<h2>💰 Fiyat Hesapla</h2>
+<div class="card">
+<select id="type">
+<option value="taksi">Taksi</option>
+<option value="nakliyat">Nakliyat</option>
+</select>
+
+<input type="number" id="km" placeholder="Mesafe (km)">
+<button onclick="hesapla()">Fiyatı Hesapla</button>
+<h3 id="sonuc"></h3>
+</div>
+</div>
+
+<footer>
+<p>© 2026 Aktan Taksi & Nakliyat</p>
+<p>📞 0544 835 44 81 | WhatsApp ile Sipariş</p>
+</footer>
+
+<script>
+function hesapla(){
+let type = document.getElementById("type").value;
+let km = document.getElementById("km").value;
+let fiyat=0;
+
+if(type=="taksi") fiyat = km * 15;
+else fiyat = km * 30;
+
+document.getElementById("sonuc").innerText="Tahmini Ücret: " + fiyat + " TL";
+}
+</script>
+
+</body>
+</html>
